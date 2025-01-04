@@ -34,10 +34,10 @@ export class linkedList {
         }
 
         let output = '';
-        let tmp = this.#head;
-        while(tmp !== null) {
-            output += `( ${tmp.value} ) -> `;
-            tmp = tmp.next;
+        let node = this.#head;
+        while(node !== null) {
+            output += `( ${node.value} ) -> `;
+            node = node.next;
         }
         console.log(output + 'null');
     }
@@ -50,10 +50,10 @@ export class linkedList {
 
     get size() {
         let size = 0;
-        let tmp = this.#head;
-        while(tmp !== null) {
+        let node = this.#head;
+        while(node !== null) {
             size++;
-            tmp = tmp.next;
+            node = node.next;
         }
         return size;
     }
@@ -66,12 +66,12 @@ export class linkedList {
         return this.#tail.value;
     }
 
-    at(index, node = false) {
-        let tmp = this.#head;
+    at(index, check = false) {
+        let node = this.#head;
         for (let i = 0; i < index; i++) {
-            tmp = tmp.next;
+            node = node.next;
         }
-        return (node === false)? tmp.value : tmp;
+        return (check === false)? node.value : node;
     }
 
     pop() {
@@ -80,21 +80,21 @@ export class linkedList {
     }
 
     contains(value) {
-        let tmp = this.#head;
-        while (tmp !== null) {
-            if (tmp.value === value) return true; 
-            tmp = tmp.next;
+        let node = this.#head;
+        while (node !== null) {
+            if (node.value === value) return true; 
+            node = node.next;
         }
         return false;
     }
 
     find(value) {
-        let tmp = this.#head;
+        let node = this.#head;
         let index = 0;
-        while (tmp !== null) {
-            if (tmp.value === value) return index; 
+        while (node !== null) {
+            if (node.value === value) return index; 
             index++;
-            tmp = tmp.next;
+            node = node.next;
         }
         return null;
     }
