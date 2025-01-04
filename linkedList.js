@@ -104,6 +104,17 @@ export class linkedList {
             this.at(index - 1, true).next = new Node(value, this.at(index, true));
         }
     }
+
+    removeAt(index) {
+        if (index === 0) {
+            this.#head = this.#head.next;
+        } else if (index === this.size - 1) {
+            this.#tail = this.at(this.size - 2, true);
+            this.#tail.next = null;
+        } else {
+            this.at(index - 1, true).next = this.at(index + 1, true);
+        }
+    }
 }
 
 class Node {

@@ -9,5 +9,7 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 
-list.insertAt("human", 1);
+list.insertAt("horse", 1);
+list.removeAt(1);
+
 list.toString();
