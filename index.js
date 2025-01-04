@@ -4,4 +4,5 @@ let example = new linkedList();
 
 example.append('cat');
 example.append('dog');
+example.append('mouse');
 example.toString();

@@ -17,6 +17,11 @@ export class linkedList {
     }
 
     toString() {
+        if (this.#list === undefined) {
+            console.log(`Unable to print empty list`);
+            return;
+        }
+
         let output = '';
         let tmp = this.#list;
 
