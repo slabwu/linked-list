@@ -5,17 +5,25 @@ export function test(text) {
 export class linkedList {
     #list;
     #tail;
+    #head;
     constructor() {
         this.#list = undefined;
     }
 
     append(value) {
         if (this.#list === undefined) {
-            this.#list = new Node(value, null);
-            this.#tail = this.#list;
+            this.initialise(value);
         } else {
             this.#tail.next = new Node(value, null);
             this.#tail = this.#tail.next;
+        }
+    }
+
+    prepend(value) {
+        if (this.#list === undefined) {
+            this.initialise(value);
+        } else {
+            this.#head = new Node(value, this.#head);
         }
     }
 
@@ -26,7 +34,7 @@ export class linkedList {
         }
 
         let output = '';
-        let tmp = this.#list;
+        let tmp = this.#head;
 
         while(tmp !== null) {
             output += `( ${tmp.value} ) -> `;
@@ -34,6 +42,12 @@ export class linkedList {
         }
         output += 'null';
         console.log(output);
+    }
+
+    initialise(value) {
+        this.#list = new Node(value, null);
+        this.#head = this.#list;
+        this.#tail = this.#list;
     }
 }
 
