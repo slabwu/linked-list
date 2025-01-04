@@ -38,8 +38,9 @@ export class linkedList {
 
         while(tmp !== null) {
             output += `( ${tmp.value} ) -> `;
-            tmp = tmp.next
+            tmp = tmp.next;
         }
+
         output += 'null';
         console.log(output);
     }
@@ -48,6 +49,26 @@ export class linkedList {
         this.#list = new Node(value, null);
         this.#head = this.#list;
         this.#tail = this.#list;
+    }
+
+    get size() {
+        let size = 0;
+        let tmp = this.#head;
+
+        while(tmp !== null) {
+            size++;
+            tmp = tmp.next;
+        }
+
+        return size;
+    }
+
+    get head() {
+        return this.#head.value;
+    }
+
+    get tail() {
+        return this.#tail.value;
     }
 }
 

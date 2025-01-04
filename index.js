@@ -8,3 +8,7 @@ example.append('mouse');
 example.prepend('rabbit');
 example.prepend('horse');
 example.toString();
+
+test(example.size);
+test(example.head);
+test(example.tail);
