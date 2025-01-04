@@ -39,8 +39,7 @@ export class linkedList {
             output += `( ${tmp.value} ) -> `;
             tmp = tmp.next;
         }
-        output += 'null';
-        console.log(output);
+        console.log(output + 'null');
     }
 
     initialise(value) {
@@ -73,6 +72,11 @@ export class linkedList {
             tmp = tmp.next;
         }
         return (node === false)? tmp.value : tmp;
+    }
+
+    pop() {
+        this.#tail = this.at(this.size - 2, true);
+        this.#tail.next = null;
     }
 
     contains(value) {
@@ -112,8 +116,7 @@ export class linkedList {
         if (index === 0) {
             this.#head = this.#head.next;
         } else if (index === this.size - 1) {
-            this.#tail = this.at(this.size - 2, true);
-            this.#tail.next = null;
+            this.pop();
         } else if (index > this.size - 1) {
             console.log('Index does not exist');
             return;
