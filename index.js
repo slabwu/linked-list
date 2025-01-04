@@ -13,3 +13,7 @@ test(list.size);
 test(list.head);
 test(list.tail);
 test(list.at(2));
+test(list.contains('cat'));
+test(list.contains('owl'));
+test(list.find('cat'));
+test(list.find('owl'));

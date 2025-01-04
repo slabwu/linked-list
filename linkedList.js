@@ -74,6 +74,26 @@ export class linkedList {
         }
         return tmp.value;
     }
+
+    contains(value) {
+        let tmp = this.#head;
+        while (tmp !== null) {
+            if (tmp.value === value) return true; 
+            tmp = tmp.next;
+        }
+        return false;
+    }
+
+    find(value) {
+        let tmp = this.#head;
+        let index = 0;
+        while (tmp !== null) {
+            if (tmp.value === value) return index; 
+            index++;
+            tmp = tmp.next;
+        }
+        return null;
+    }
 }
 
 class Node {
