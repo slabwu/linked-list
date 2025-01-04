@@ -1,4 +1,4 @@
-import { test, linkedList } from "./linkedList.js"
+import { linkedList } from "./linkedList.js"
 
 let list = new linkedList();
 

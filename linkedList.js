@@ -1,7 +1,3 @@
-export function test(text) {
-    console.log(text);
-}
-
 export class linkedList {
     #list;
     #tail;
