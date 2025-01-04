@@ -1,3 +1,4 @@
-import { test } from "./linkedList.js"
+import { test, linkedList } from "./linkedList.js"
 
-test();
+let example = new linkedList();
+test(example.size);
