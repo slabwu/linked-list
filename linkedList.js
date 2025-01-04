@@ -29,7 +29,7 @@ export class linkedList {
 
     toString() {
         if (this.#list === undefined) {
-            console.log(`Unable to print empty list`);
+            console.log('Unable to print empty list');
             return;
         }
 
@@ -100,6 +100,9 @@ export class linkedList {
             this.prepend(value);
         } else if (index === this.size - 1) {
             this.append(value);
+        } else if (index > this.size - 1) {
+            console.log('Index does not exist');
+            return;
         } else {
             this.at(index - 1, true).next = new Node(value, this.at(index, true));
         }
@@ -111,6 +114,9 @@ export class linkedList {
         } else if (index === this.size - 1) {
             this.#tail = this.at(this.size - 2, true);
             this.#tail.next = null;
+        } else if (index > this.size - 1) {
+            console.log('Index does not exist');
+            return;
         } else {
             this.at(index - 1, true).next = this.at(index + 1, true);
         }
