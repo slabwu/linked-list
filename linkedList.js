@@ -4,6 +4,7 @@ export function test(text) {
 
 export class linkedList {
     #list;
+    #tail;
     constructor() {
         this.#list = undefined;
     }
@@ -11,8 +12,10 @@ export class linkedList {
     append(value) {
         if (this.#list === undefined) {
             this.#list = new Node(value, null);
+            this.#tail = this.#list;
         } else {
-            this.#list.next = new Node(value, null);
+            this.#tail.next = new Node(value, null);
+            this.#tail = this.#tail.next;
         }
     }
 
