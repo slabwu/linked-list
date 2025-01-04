@@ -1,14 +1,15 @@
 import { test, linkedList } from "./linkedList.js"
 
-let example = new linkedList();
+let list = new linkedList();
 
-example.append('cat');
-example.append('dog');
-example.append('mouse');
-example.prepend('rabbit');
-example.prepend('horse');
-example.toString();
+list.append('cat');
+list.append('dog');
+list.append('mouse');
+list.prepend('rabbit');
+list.prepend('horse');
+list.toString();
 
-test(example.size);
-test(example.head);
-test(example.tail);
+test(list.size);
+test(list.head);
+test(list.tail);
+test(list.at(2));

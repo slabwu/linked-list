@@ -35,12 +35,10 @@ export class linkedList {
 
         let output = '';
         let tmp = this.#head;
-
         while(tmp !== null) {
             output += `( ${tmp.value} ) -> `;
             tmp = tmp.next;
         }
-
         output += 'null';
         console.log(output);
     }
@@ -54,12 +52,10 @@ export class linkedList {
     get size() {
         let size = 0;
         let tmp = this.#head;
-
         while(tmp !== null) {
             size++;
             tmp = tmp.next;
         }
-
         return size;
     }
 
@@ -69,6 +65,14 @@ export class linkedList {
 
     get tail() {
         return this.#tail.value;
+    }
+
+    at(index) {
+        let tmp = this.#head;
+        for (let i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.value;
     }
 }
 
