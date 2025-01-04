@@ -2,18 +2,12 @@ import { test, linkedList } from "./linkedList.js"
 
 let list = new linkedList();
 
-list.append('cat');
-list.append('dog');
-list.append('mouse');
-list.prepend('rabbit');
-list.prepend('horse');
-list.toString();
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
 
-test(list.size);
-test(list.head);
-test(list.tail);
-test(list.at(2));
-test(list.contains('cat'));
-test(list.contains('owl'));
-test(list.find('cat'));
-test(list.find('owl'));
+list.insertAt("human", 1);
+list.toString();

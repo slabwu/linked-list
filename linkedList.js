@@ -67,12 +67,12 @@ export class linkedList {
         return this.#tail.value;
     }
 
-    at(index) {
+    at(index, node = false) {
         let tmp = this.#head;
         for (let i = 0; i < index; i++) {
             tmp = tmp.next;
         }
-        return tmp.value;
+        return (node === false)? tmp.value : tmp;
     }
 
     contains(value) {
@@ -93,6 +93,16 @@ export class linkedList {
             tmp = tmp.next;
         }
         return null;
+    }
+
+    insertAt(value, index) {
+        if (index === 0) {
+            this.prepend(value);
+        } else if (index === this.size - 1) {
+            this.append(value);
+        } else {
+            this.at(index - 1, true).next = new Node(value, this.at(index, true));
+        }
     }
 }
 
